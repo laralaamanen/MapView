@@ -6,14 +6,14 @@ import * as Location from 'expo-location';
 export default function Map() {
 
   const [location, setLocation] = useState({
-    latitude: 65.0033,
-    longitude: 25.4684,
+    latitude: 65.0800,
+    longitude: 25.4800,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421
   });
 
   const getUserPosition = async () => {
-    let {status} = await Location.requestBackgroundPermissionsAsync();
+    let {status} = await Location.requestForegroundPermissionsAsync();
 
     try {
       if (status !== 'granted') {
