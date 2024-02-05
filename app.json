@@ -15,7 +15,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["location", "fetch", "remote-notification"],
+        "NSLocationWhenInUseUsageDescription": "We need your location for...",
+    "NSLocationAlwaysUsageDescription": "We need your location for...",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "We need your location for..."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +31,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow MapView1 to use your location."
+        }
+      ]
+    ]
   }
 }
